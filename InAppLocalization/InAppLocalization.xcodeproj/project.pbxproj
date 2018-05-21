@@ -10,6 +10,12 @@
 		D359392220B32D670063AEC1 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359392120B32D670063AEC1 /* AppDependencies.swift */; };
 		D359392520B32E750063AEC1 /* AppDependencies+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359392420B32E750063AEC1 /* AppDependencies+Language.swift */; };
 		D359392820B330660063AEC1 /* AppDependencies+AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359392720B330660063AEC1 /* AppDependencies+AppStorage.swift */; };
+		D359392C20B3480B0063AEC1 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359392B20B3480B0063AEC1 /* LocalizationKeys.swift */; };
+		D359392F20B34B480063AEC1 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359392E20B34B480063AEC1 /* Localizer.swift */; };
+		D359393120B34BA30063AEC1 /* LocalizerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359393020B34BA30063AEC1 /* LocalizerImpl.swift */; };
+		D359393420B350A10063AEC1 /* AppDependencies+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359393320B350A10063AEC1 /* AppDependencies+Localizer.swift */; };
+		D359393620B3515E0063AEC1 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359393520B3515E0063AEC1 /* Localize.swift */; };
+		D359393820B352660063AEC1 /* String+Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359393720B352660063AEC1 /* String+Localizer.swift */; };
 		D36C3CAB2098BF03000E9BB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C3CAA2098BF03000E9BB5 /* AppDelegate.swift */; };
 		D36C3CAD2098BF03000E9BB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C3CAC2098BF03000E9BB5 /* ViewController.swift */; };
 		D36C3CB02098BF03000E9BB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36C3CAE2098BF03000E9BB5 /* Main.storyboard */; };
@@ -49,6 +55,12 @@
 		D359392120B32D670063AEC1 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		D359392420B32E750063AEC1 /* AppDependencies+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencies+Language.swift"; sourceTree = "<group>"; };
 		D359392720B330660063AEC1 /* AppDependencies+AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencies+AppStorage.swift"; sourceTree = "<group>"; };
+		D359392B20B3480B0063AEC1 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
+		D359392E20B34B480063AEC1 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
+		D359393020B34BA30063AEC1 /* LocalizerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizerImpl.swift; sourceTree = "<group>"; };
+		D359393320B350A10063AEC1 /* AppDependencies+Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencies+Localizer.swift"; sourceTree = "<group>"; };
+		D359393520B3515E0063AEC1 /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		D359393720B352660063AEC1 /* String+Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizer.swift"; sourceTree = "<group>"; };
 		D36C3CA72098BF03000E9BB5 /* InAppLocalization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InAppLocalization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36C3CAA2098BF03000E9BB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36C3CAC2098BF03000E9BB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +136,43 @@
 			path = Injection;
 			sourceTree = "<group>";
 		};
+		D359392920B347BD0063AEC1 /* Localizer */ = {
+			isa = PBXGroup;
+			children = (
+				D359393220B350850063AEC1 /* Injection */,
+				D359392D20B34AEA0063AEC1 /* Platform */,
+				D359392A20B347E80063AEC1 /* Domain */,
+			);
+			path = Localizer;
+			sourceTree = "<group>";
+		};
+		D359392A20B347E80063AEC1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D359392B20B3480B0063AEC1 /* LocalizationKeys.swift */,
+				D359392E20B34B480063AEC1 /* Localizer.swift */,
+				D359393520B3515E0063AEC1 /* Localize.swift */,
+				D359393720B352660063AEC1 /* String+Localizer.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D359392D20B34AEA0063AEC1 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				D359393020B34BA30063AEC1 /* LocalizerImpl.swift */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		D359393220B350850063AEC1 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				D359393320B350A10063AEC1 /* AppDependencies+Localizer.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
 		D36C3C9E2098BF03000E9BB5 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +218,7 @@
 		D36C3CCA2098C26C000E9BB5 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				D359392920B347BD0063AEC1 /* Localizer */,
 				D36C3CD7209A53F1000E9BB5 /* Language */,
 				D36C3CCD2098C2A1000E9BB5 /* App Storage */,
 			);
@@ -392,8 +442,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36C3CCC2098C298000E9BB5 /* AppStorage.swift in Sources */,
+				D359392C20B3480B0063AEC1 /* LocalizationKeys.swift in Sources */,
 				D3BB972220A1F9A5007CB648 /* Language.swift in Sources */,
 				D3BB972620A20A97007CB648 /* LanguageController.swift in Sources */,
+				D359393820B352660063AEC1 /* String+Localizer.swift in Sources */,
 				D3BB972A20A211C6007CB648 /* Operation.swift in Sources */,
 				D3BB973420A214CD007CB648 /* AppLanguageSetterOperation.swift in Sources */,
 				D3BB973C20A21601007CB648 /* LanguageAppStorage.swift in Sources */,
@@ -405,13 +457,17 @@
 				D3BB973F20A219FE007CB648 /* DeviceLanguagesGetterOperationImpl.swift in Sources */,
 				D36C3CD62098C593000E9BB5 /* AppStorageImpl.swift in Sources */,
 				D36C3CAD2098BF03000E9BB5 /* ViewController.swift in Sources */,
+				D359392F20B34B480063AEC1 /* Localizer.swift in Sources */,
 				D36C3CD9209A5557000E9BB5 /* LanguageProtocol.swift in Sources */,
 				D3BB972C20A211EE007CB648 /* Empty.swift in Sources */,
+				D359393620B3515E0063AEC1 /* Localize.swift in Sources */,
 				D36C3CD42098C3F9000E9BB5 /* BaseAppStorageResourceImpl.swift in Sources */,
 				D36C3CAB2098BF03000E9BB5 /* AppDelegate.swift in Sources */,
+				D359393420B350A10063AEC1 /* AppDependencies+Localizer.swift in Sources */,
 				D3BB973820A21556007CB648 /* AppLanguageSetterOperationImpl.swift in Sources */,
 				D36C3CD22098C3C6000E9BB5 /* AppStorageKey.swift in Sources */,
 				D359392820B330660063AEC1 /* AppDependencies+AppStorage.swift in Sources */,
+				D359393120B34BA30063AEC1 /* LocalizerImpl.swift in Sources */,
 				D3BB973A20A215AF007CB648 /* DeviceLanguagesGetterOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
