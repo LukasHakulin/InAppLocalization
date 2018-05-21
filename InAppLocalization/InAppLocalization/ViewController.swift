@@ -6,18 +6,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var screenTitle: UILabel! {
+        didSet {
+            screenTitle.text = LocalizationKeys.screenTitle.localized()
+        }
+    }
+
+    @IBAction func englishButtonPressed(_ sender: Any) {
+        setLanguageAndRefreshLocalizations(withLanguage: .english)
+    }
+
+    @IBAction func czechButtonPressed(_ sender: Any) {
+        setLanguageAndRefreshLocalizations(withLanguage: .czech)
+    }
+
+    @IBAction func germanButtonPressed(_ sender: Any) {
+        setLanguageAndRefreshLocalizations(withLanguage: .german)
+    }
+
     /* List of App languages should correspond with your localizations in Project->Info(Localizations) in Project settings */
     fileprivate let appLanguages: [Language] = [Language.english, Language.german, Language.czech]
     fileprivate let languageController: LanguageController = AppDelegate().appDependencies.languageController  // DI break, only for test purpose
 
-    // TODO:
-    /*
-     * Localize ViewController ... New Localizer Feature, Extension for LocalizationKeys struct
-     */
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         print("Language controller with no predefined language:")
         print(try! languageController.appLanguage())
@@ -40,6 +52,11 @@ class ViewController: UIViewController {
 
         print("Language controller with predefined GERMAN language:")
         print(try! languageControllerWithPredefinedGermanLanguage.appLanguage())
+    }
+
+    private func setLanguageAndRefreshLocalizations(withLanguage language: Language) {
+        _ = try? languageController.set(withLanguage: language)
+        screenTitle.text = localize(LocalizationKeys.screenTitle)
     }
 }
 
