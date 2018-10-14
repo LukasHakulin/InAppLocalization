@@ -2,7 +2,7 @@
 //  Copyright © 2018. All rights reserved.
 //
 
-final class AppLanguageSetterOperationImpl: AppLanguageSetterOperation {
+public final class AppLanguageSetterOperationImpl: AppLanguageSetterOperation {
 
     private let languageAppStorage: LanguageAppStorage
 
@@ -10,7 +10,7 @@ final class AppLanguageSetterOperationImpl: AppLanguageSetterOperation {
         self.languageAppStorage = languageAppStorage
     }
 
-    override func execute(with input: Language) throws {
+    override public func execute(with input: Language) throws {
         _ = try languageAppStorage.save(input.code)
     }
 }
