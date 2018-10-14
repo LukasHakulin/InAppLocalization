@@ -4,7 +4,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     @IBOutlet weak var screenTitle: UILabel! {
         didSet {
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         setLanguageAndRefreshLocalizations(withLanguage: .german)
     }
 
-    /* List of App languages should correspond with your localizations in Project->Info(Localizations) in Project settings */
+    /* List of App languages should correspond to your localizations in Project->Info(Localizations) in Project settings */
     fileprivate let appLanguages: [Language] = [Language.english, Language.german, Language.czech]
     fileprivate let languageController: LanguageController = AppDelegate().appDependencies.languageController  // DI break, only for test purpose
 
@@ -36,11 +36,11 @@ class ViewController: UIViewController {
 
         print("Language controller with predefined GERMAN language:")
         let languageControllerWithPredefinedGermanLanguage: LanguageController = LanguageControllerImpl(
-            predefinedLanguage: Language.german,
             appLanguageGetterOperation: AppDelegate().appDependencies.appLanguageGetterOperation,
             appLanguageSetterOperation: AppDelegate().appDependencies.appLanguageSetterOperation,
             deviceLanguagesGetterOperation: AppDelegate().appDependencies.deviceLanguagesGetterOperation
         )
+        languageControllerWithPredefinedGermanLanguage.predefinedLanguage = Language.german
         print(try! languageControllerWithPredefinedGermanLanguage.appLanguage())
 
         // We can easily change our app language for example to CZECH
@@ -59,4 +59,3 @@ class ViewController: UIViewController {
         screenTitle.text = localize(LocalizationKeys.screenTitle)
     }
 }
-

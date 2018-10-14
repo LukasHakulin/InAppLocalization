@@ -4,9 +4,9 @@
 
 import Foundation
 
-final class DeviceLanguagesGetterOperationImpl: DeviceLanguagesGetterOperation {
+public final class DeviceLanguagesGetterOperationImpl: DeviceLanguagesGetterOperation {
 
-    override func execute(with input: Empty) throws -> [Language] {
+    override public func execute(with input: Empty) throws -> [Language] {
         return Locale.preferredLanguages.map { Language(code: $0) }
     }
 }
