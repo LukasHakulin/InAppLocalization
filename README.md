@@ -32,3 +32,17 @@ Library should keep simple and modifiable as much as possible. That's the main r
  - iOS 9.0+
  - Swift 4.1+
  - Xcode 9.4.1+
+
+## Installation
+
+### [CocoaPods](http://cocoapods.org)
+
+[CocoaPods InAppLocalization](https://cocoapods.org/pods/InAppLocalization)
+To install it, simply add the following line to your Podfile:
+```ruby
+pod 'InAppLocalization', '0.1.0'
+```
+
+## License
+
+InAppLocalization is available under the MIT license. See the LICENSE file for more info.
